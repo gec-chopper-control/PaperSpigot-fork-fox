@@ -44,13 +44,13 @@ subprojects {
 
     repositories {
         mavenCentral()
-        maven("https://papermc.io/repo/repository/maven-public/")
+        maven("https://repo.papermc.io/repository/maven-public/")
     }
 }
 
 repositories {
     mavenCentral()
-    maven("https://papermc.io/repo/repository/maven-public/") {
+    maven("https://repo.papermc.io/repository/maven-public/") {
         content { onlyForConfigurations("paperclip") }
     }
 }
@@ -97,7 +97,7 @@ tasks.generateDevelopmentBundle {
     libraryRepositories.addAll(
         "https://repo.maven.apache.org/maven2/",
         "https://libraries.minecraft.net/",
-        "https://papermc.io/repo/repository/maven-public/",
+        "https://repo.papermc.io/repository/maven-public/",
         "https://maven.fabricmc.net/",
     )
 }
@@ -115,7 +115,7 @@ publishing {
 allprojects {
     publishing {
         repositories {
-            maven("https://papermc.io/repo/repository/maven-snapshots/") {
+            maven("https://repo.papermc.io/repository/maven-snapshots/") {
                 name = "paperSnapshots"
                 credentials(PasswordCredentials::class)
             }
