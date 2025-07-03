@@ -13,6 +13,13 @@ build/
 nbproject/
 nbactions.xml
 
+# we use maven!
+build.xml
+
+# maven
+target/
+dependency-reduced-pom.xml
+
 # vim
 .*.sw[a-p]
 
@@ -20,6 +27,20 @@ nbactions.xml
 bin/
 dist/
 manifest.mf
+
+/work/Temp/
+work/1.*
+work/Minecraft
+work/BuildData
+work/Bukkit
+work/CraftBukkit
+work/Paperclip
+work/Spigot
+work/Spigot-Server
+work/Spigot-API
+work/*.jar
+work/test-server
+work/ForgeFlower
 
 # Mac filesystem dust
 .DS_Store/
@@ -32,20 +53,19 @@ manifest.mf
 .idea/
 out/
 
-# JetBrains Fleet
-.fleet/
-
 # Linux temp files
 *~
 
 # other stuff
 run/
-logs/
+
+Paper-Server
+Paper-API
+Paperclip.jar
+paperclip.jar
+paperclip-*.jar
+paperclip.properties
 
 !gradle/wrapper/gradle-wrapper.jar
 
 test-plugin.settings.gradle.kts
-paper-generator.settings.gradle.kts
-
-# Don't track patched vanilla submodules
-paper-server/src/minecraft/

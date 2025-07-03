@@ -1,20 +1,23 @@
 version = "1.0.0-SNAPSHOT"
 
+repositories {
+    maven("https://libraries.minecraft.net")
+}
+
 dependencies {
     compileOnly(project(":paper-api"))
+    compileOnly(project(":paper-mojangapi"))
 }
 
 tasks.processResources {
-    var apiVersion = rootProject.providers.gradleProperty("mcVersion").get()
-    // Bukkit api versioning does not support suffixed versions
-    apiVersion = apiVersion.substringBefore('-')
-
+    val apiVersion = rootProject.providers.gradleProperty("mcVersion").get()
+        .split(".", "-").take(2).joinToString(".")
     val props = mapOf(
         "version" to project.version,
-        "apiversion" to "\"$apiVersion\"",
+        "apiversion" to apiVersion,
     )
     inputs.properties(props)
-    filesMatching("paper-plugin.yml") {
+    filesMatching("plugin.yml") {
         expand(props)
     }
 }
